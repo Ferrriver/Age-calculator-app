@@ -1,0 +1,187 @@
+:root {
+    --white: hsl(0, 0%, 100%);
+    --off-white: hsl(0, 0%, 94%);
+    --light-grey: hsl(0, 0%, 86%);
+    --smokey-grey: hsl(0, 1%, 44%);
+    --off-black: hsl(0, 0%, 8%);
+    --purple: hsl(259, 100%, 65%);
+    --light-red: hsl(0, 100%, 67%);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--off-white);
+    font-family: 'Poppins', sans-serif;
+}
+
+main {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background-color: var(--white);
+    width: 50vw;
+    min-height: 60vh;
+    border-radius: 5% 5% 30% 5%;
+    padding: 2rem;
+}
+
+/* ----------Inputs Section---------- */
+.date-inputs {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+}
+
+.container-input {
+    display: flex;
+    flex-direction: column;
+    width: clamp(50px, 10vw, 120px);
+    margin-right: 1.5rem;
+}
+
+.container-input label {
+    font-size: 0.6rem;
+    color: var(--smokey-grey);
+    margin-bottom: 0.2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+
+.container-input .input-date {
+    height: 2.5rem;
+    padding: 0.6rem 0 0.6rem 1rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    border-radius: 0.3rem;
+    color: var(--off-black);
+    border: 1px solid var(--light-grey);
+}
+
+.container-input .input-date::placeholder {
+    color: var(--smokey-grey);
+    opacity: 70%;
+    font-size: 1.2rem;
+}
+
+.container-input .input-date:focus {
+    outline-color: var(--purple);
+}
+
+/* ----------Invalid inputs---------- */
+.invalid-message {
+    font-size: 8px;
+    font-style: italic;
+    color: var(--light-red);
+    margin-top: 0.3rem;
+    display: none;
+}
+
+/* ----------Divider---------- */
+.divider {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.line {
+    background-color:  var(--off-white);
+    width: 100%;
+    height: 1.5px;
+}
+
+.btn-calculate {
+    position: absolute;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.btn-calculate img:hover {
+    background-color: var(--off-black);
+}
+
+.btn-calculate img {
+    background-color: var(--purple);
+    border-radius: 50%;
+    padding: 1rem;
+}
+
+/* ----------Results Section---------- */
+.date-result {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+.date-result p {
+    font-style: italic;
+    font-weight: bolder;
+    font-size: clamp(2rem, 5vw, 6rem);
+    color: var(--off-black);
+}
+
+.date-result span {
+   
+    color: var(--purple);
+   
+}
+
+@media screen and (max-width: 600px) {
+    .card {
+        padding: 2rem 1rem;
+        min-height: 40vh;
+        width: 60vw;
+    }
+
+    .date-inputs {
+        justify-content: center;
+        margin-bottom: 2.5rem;
+        gap: 1rem;
+    }
+
+    .container-input {
+        margin-right: 0;
+    }
+
+    .container-input label {
+        font-size: 0.5rem;
+    }
+
+    .container-input .input-date {
+        padding: 0.6rem 0.2rem;
+        font-size: 0.6rem;
+        height: 2rem;
+    }
+
+    .container-input .input-date::placeholder {
+        font-size: 0.6rem;
+    }
+    
+    .divider {
+        justify-content: center;
+        margin-bottom: 2.5rem;
+    }
+
+    .btn-calculate img {
+        width: 40px;
+        height: 40px;
+        padding: 0.6rem;
+    }
+}
+
+/* ----------Footer Section---------- */
+.attribution {
+    font-size: 11px; text-align: center;
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%);
+}
